@@ -89,6 +89,7 @@ void SettingsWindow::LoadSettings(std::string profile) {
         directMemoryAccessSetting = EmulatorSettings.IsDirectMemoryAccessEnabled();
         windowsGuestRedZoneProtectionModeSetting = EmulatorSettings.IsRedZonePatchingEnabled();
         devkitConsoleSetting = EmulatorSettings.IsDevKit();
+        prosperoModeSetting = EmulatorSettings.IsProspero();
         neoModeSetting = EmulatorSettings.IsNeo();
         shadnetEnabledSetting = EmulatorSettings.IsShadNetEnabledSetting();
         connectedNetworkSetting = EmulatorSettings.IsConnectedToNetwork();
@@ -146,6 +147,7 @@ void SettingsWindow::SaveSettings(std::string profile) {
         // Windows static guest red-zone protection
         EmulatorSettings.SetRedZonePatchingEnabled(windowsGuestRedZoneProtectionModeSetting, true);
         EmulatorSettings.SetDevKit(devkitConsoleSetting, true);
+        EmulatorSettings.SetProspero(prosperoModeSetting, true);
         EmulatorSettings.SetNeo(neoModeSetting, true);
         EmulatorSettings.SetShadNetEnabled(shadnetEnabledSetting, true);
         EmulatorSettings.SetConnectedToNetwork(connectedNetworkSetting, true);
@@ -794,6 +796,7 @@ void SettingsWindow::DrawSettingsTable(SettingsCategory category) {
 #endif
             AddSettingCheckbox("Enable Devkit Console Mode", devkitConsoleSetting);
             AddSettingCheckbox("Enable PS4 Neo Mode", neoModeSetting);
+            AddSettingCheckbox("Enable PS5 (Prospero) Console Mode", prosperoModeSetting);
             AddSettingCheckbox("Enable ShadNet", shadnetEnabledSetting);
             AddSettingCheckbox("Set Network Connected to True", connectedNetworkSetting);
             AddSettingCheckbox("Enable Shader Cache", pipelineCacheEnabledSetting);
