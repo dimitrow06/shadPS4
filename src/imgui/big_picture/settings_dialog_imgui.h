@@ -159,6 +159,7 @@ private:
     bool directMemoryAccessSetting;
     bool windowsGuestRedZoneProtectionModeSetting;
     bool devkitConsoleSetting;
+    bool prosperoModeSetting;
     bool neoModeSetting;
     bool shadnetEnabledSetting;
     bool connectedNetworkSetting;
